@@ -10,9 +10,8 @@ inputs:
 runs:
   using: docker
   image: docker://python:alpine3.14
-  entrypoint: python
   args: 
-    - ${{ github.action_path }}/scripts/hello-world.py
+    - hello-world.py
     - "--nombre"
     - ${{ inputs.name }}
   
