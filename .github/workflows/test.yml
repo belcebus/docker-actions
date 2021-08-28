@@ -1,0 +1,12 @@
+name: Test workflow
+
+on:
+  push: [main]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: ejecutar action
+        uses: belcebus/greetings-docker-action@main
+        with:
+          name: David
