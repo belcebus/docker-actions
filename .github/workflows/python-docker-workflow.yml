@@ -1,7 +1,8 @@
 name: Test python docker action
 on:
   pull_request:
-    
+    branch: [main]
+    types: [labeled]
 jobs:
   test:
     runs-on: ubuntu-latest
