@@ -12,7 +12,7 @@ runs:
   image: docker://python:alpine3.14
   entrypoint: python
   args: 
-    - ${GITHUB_ACTION_PATH}/scripts/hello-world.py
+    - ${{ github.action_path }}/scripts/hello-world.py
     - "--nombre"
     - ${{ inputs.name }}
   
