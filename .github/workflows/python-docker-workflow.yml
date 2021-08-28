@@ -6,6 +6,9 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
+      - name: checkout repo
+        uses: actions/checkout@v1
+         
       - name: python docker action test
         uses: ./.github/actions/python-docker-action
         with:
