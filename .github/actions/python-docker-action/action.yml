@@ -1,0 +1,16 @@
+name: 'python hello world action'
+description: 'Dice hola mundo pero desde python'
+author: 'https://github.com/belcebus'
+
+inputs:
+  name:
+    default: "desconocido"
+    description: "the name to greeting"
+
+runs:
+  using: docker
+  image: Dockerfile
+  args: 
+    - "--nombre"
+    - ${{ inputs.name }}
+  

@@ -1,0 +1,12 @@
+name: Test python docker action
+on:
+  pull_request:
+    
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: python docker action test
+        uses: .github/actions/python-docker-action
+        with:
+          name: David
