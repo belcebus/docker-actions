@@ -1,5 +1,6 @@
 FROM python:alpine3.14
 
+WORKDIR /scripts
 COPY scripts .
 
-ENTRYPOINT [ "python", "hello-world.py"]
+ENTRYPOINT [ "python", "scripts/hello-world.py"]
