@@ -9,8 +9,10 @@ inputs:
 
 runs:
   using: docker
-  image: Dockerfile
+  image: python:alpine3.14
+  entrypoint: python
   args: 
+    - scripts/hello-world.py
     - "--nombre"
     - ${{ inputs.name }}
   
