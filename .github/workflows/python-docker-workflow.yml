@@ -7,6 +7,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: python docker action test
-        uses: .github/actions/python-docker-action
+        uses: ./.github/actions/python-docker-action
         with:
           name: David
