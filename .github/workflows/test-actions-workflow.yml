@@ -6,10 +6,16 @@ jobs:
   test-python-docker:
     runs-on: ubuntu-latest
     steps:
-      - name: checkout repo
-        uses: actions/checkout@v1
-
+      - uses: actions/checkout@v1
       - name: python docker action test
         uses: ./.github/actions/python-docker-action
         with:
           name: David
+  
+  cat-fact:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: meow
+        uses: ./.github/actions/cat-facts
+        id: cat
