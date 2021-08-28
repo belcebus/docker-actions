@@ -12,10 +12,31 @@ jobs:
         with:
           name: David
   
-  cat-fact:
+  test-cat-fact:
     runs-on: ubuntu-latest
+    outputs:
+      fact: ${{steps.cat.outputs.fact}}
     steps:
       - uses: actions/checkout@v1
       - name: meow
         uses: ./.github/actions/cat-facts
         id: cat
+  
+  test-hello-world-go:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: hello-action
+        uses: ./.github/actions/hello-world
+
+  test-create-issue:
+    needs: test-cat-fact
+    runs-on: ubuntu
+    steps:
+      - uses: actions/checkout@v1
+      - name: create-issue
+        uses: ./.github/actions/issue-maker
+        with:
+          repoToken: ${{secrets.GITHUB_TOKEN}}
+          catFact: ${{needs.test-cat-fact.outputs.fact}}
+          issueTitle: "a cat fact for you"
